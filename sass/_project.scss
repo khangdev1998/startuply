@@ -1,0 +1,190 @@
+.project {
+  --mb-project: 58px;
+  padding-top: 14rem;
+  &-container {
+    @include flexbox(
+      (
+        justify-content: space-between,
+        align-items: center,
+      )
+    );
+  }
+  &-tab {
+    list-style: none;
+    @include flexbox(
+      (
+        justify-content: space-between,
+        align-items: center,
+      )
+    );
+    gap: 0 4rem;
+  }
+  &-tab__items.active {
+    @include bgc($primary-color);
+    padding: 1.5rem 5rem;
+    border-radius: 28px;
+    cursor: pointer;
+    box-shadow: rgb(102 60 252 / 95%) 0px 7px 20px -4px;
+  }
+  &-tab__items:first-child &-tab__link {
+    color: $light-color;
+  }
+  &-tab__link {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: #c7c7c7;
+  }
+  &-list {
+    padding-top: 7rem;
+    @include flexbox(
+      (
+        justify-content: space-between,
+        flex-wrap: wrap,
+      )
+    );
+    margin-bottom: calc(-1 * var(--mb-project));
+  }
+  &-list__items {
+    width: calc(33.3333% - 20px);
+    margin-bottom: var(--mb-project);
+  }
+  &-list__image {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    height: 238px;
+    img {
+      @include size(100%);
+      display: block;
+      -o-object-fit: cover;
+         object-fit: cover;
+    }
+    &:hover .project-list__bg {
+      right: 0;
+    }
+  }
+  &-list__bg {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    transition: all 0.5s ease-in-out;
+    @include size(100%);
+    @include flexbox(
+      (
+        justify-content: center,
+        align-items: center,
+      )
+    );
+    background: linear-gradient(to right, $secondary-color, $third-color);
+  }
+  &-list__icon {
+    color: $primary-color;
+    font-size: 16px;
+    cursor: pointer;
+    @include bgc($light-color);
+    @include size(38px);
+    border-radius: 50%;
+    @include flexbox2(inline-flex, center, center);
+    & + & {
+      margin-left: 12px;
+    }
+  }
+  &-content {
+    padding-top: 15px;
+    height: calc(100% - 238px);
+    @include flexbox(
+      (
+        flex-direction: column,
+        justify-content: space-between,
+      )
+    );
+  }
+  &-content__heading {
+    font-weight: bold;
+    font-size: 18px;
+    color: #191919;
+    margin-bottom: 6px;
+    @include lineClamp(2);
+    word-break: break-all;
+    line-height: 1.2;
+  }
+  &-content__desc {
+    font-weight: 400;
+    font-size: 16px;
+    color: #8c8c8c;
+    word-break: break-all;
+    line-height: 1.4;
+  }
+  .caption {
+    font-weight: 400;
+  }
+  .title {
+    font-weight: 400;
+    font-size: 4.6rem;
+    text-transform: initial;
+    margin: 1rem 0 0;
+  }
+  @include maxWidth(1023px) {
+    padding-top: 10rem;
+    &-container {
+      flex-direction: column;
+    }
+    &-main {
+      text-align: center;
+      margin-bottom: 4.5rem;
+    }
+    &-list__items {
+      width: calc(50% - 20px);
+    }
+    .title {
+      font-size: 3.6rem;
+    }
+  }
+  @include maxWidth(767px) {
+    &-tab__link {
+      font-size: 14px;
+    }
+    &-list__items {
+      width: calc(50% - 12px);
+    }
+    &-content__heading {
+      font-size: 16px;
+    }
+    &-content__desc {
+      font-size: 14px;
+    }
+  }
+  @include maxWidth(599px) {
+    &-tab {
+      overflow-x: scroll;
+      padding-bottom: 4rem;
+      width: 100%;
+      &::-webkit-scrollbar {
+        height: 1rem;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $primary-color;
+        border-radius: 0.8rem;
+      }
+    }
+    &-tab__items.active {
+      box-shadow: initial;
+    }
+    &-list {
+      @include scrollsnap(90%, 15px, none);
+    }
+    &-list__items {
+      width: 100%;
+    }
+  }
+  @include maxWidth(374px) {
+    padding-top: 8rem;
+    &-list {
+      @include scrollsnap(100%, 10px, none);
+    }
+    .title {
+      font-size: 2.6rem;
+    }
+  }
+}

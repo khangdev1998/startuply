@@ -1,0 +1,45 @@
+.wallpaper {
+  @include bgc(#eee);
+  @include size(100%, 47rem);
+  margin-top: 5.5rem;
+  @include maxWidth(1279px) {
+    height: 24rem;
+  }
+}
+
+.quote {
+  padding: 14rem 0 10rem;
+  background: linear-gradient(to right, $secondary-color, $third-color);
+  color: $light-color;
+  &-content {
+    max-width: 94rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .heading {
+    font-size: 2.6rem;
+    font-style: italic;
+    line-height: calc(36 / 26);
+    font-weight: 400;
+  }
+  .description {
+    max-width: initial;
+    font-weight: 300;
+    font-size: 1.8rem;
+    margin: 4rem 0 5.8rem;
+  }
+  .slider {
+    padding-top: initial;
+  }
+  @include maxWidth(1023px) {
+    .heading {
+      font-size: 2.3rem;
+    }
+  }
+  @include maxWidth(767px) {
+    padding: 6.5rem 0;
+    .heading {
+      font-size: 1.9rem;
+    }
+  }
+}

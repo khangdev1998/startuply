@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  max-width: 1920px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+html {
+  font-family: $primary-font;
+  font-size: 62.5%;
+  @include maxWidth(1599px) {
+    font-size: 50%;
+  }
+}
+
+.container {
+  max-width: $wrapper + 60;
+  padding: 0 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-size: 3.4rem;
+  color: $light-color;
+  text-decoration: none;
+  font-weight: bold;
+  word-break: break-all;
+  letter-spacing: 2px;
+  display: block;
+  @include maxWidth(1279px) {
+    font-size: 24px;
+  }
+  @include maxWidth(374px) {
+    font-size: 20px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  word-break: break-all;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: $light-color;
+  &--bg {
+    @include bgc($light-color);
+    border-radius: 40px;
+    padding: 2rem 3.4rem;
+    box-shadow: rgb(108 54 253) 0px 9px 20px;
+    margin-left: 29px;
+    color: $primary-color;
+  }
+  @include maxWidth(1279px) {
+    font-size: 13.8px;
+    &--bg {
+      margin-left: 20px;
+    }
+  }
+}
+
+.heading {
+  font-size: 2.4rem;
+  font-weight: bold;
+  word-break: break-all;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  word-break: break-all;
+  font-weight: 500;
+}
+
+.more {
+  color: $primary-color;
+  font-weight: bold;
+  word-break: break-all;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  @include maxWidth(1023px) {
+    font-size: 15px;
+  }
+}
+
+.slider {
+  padding-top: 9.5rem;
+  span {
+    display: inline-block;
+    cursor: pointer;
+    @include size(38px, 7.5px);
+    @include bgc($primary-color);
+    border-radius: 12px;
+    &:not(:first-child) {
+      margin-left: 15px;
+    }
+    &:hover {
+      @include bgc($light-color);
+      transition: 0.2s;
+    }
+  }
+  .active {
+    @include bgc($light-color);
+  }
+  @include maxWidth(1023px) {
+    padding-top: 5.5rem;
+  }
+}
+
+.caption {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  @include maxWidth(767px) {
+    font-size: 14px;
+  }
+  @include maxWidth(374px) {
+    font-size: 12.5px;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 8.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 2rem 0px 3.2rem;
+  line-height: 1.1363636364;
+}
+
+.text-bold {
+  font-weight: bold;
+}
